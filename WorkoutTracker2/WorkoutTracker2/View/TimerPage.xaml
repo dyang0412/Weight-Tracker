@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:behavior="clr-namespace:WorkoutTracker2.Behavior"
+             mc:Ignorable="d"
+             x:Class="WorkoutTracker2.View.TimerPage">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="80" Margin="0,90,0,0">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="70">
+                <Button x:Name="btnMinusFive" VerticalOptions="CenterAndExpand" Text="-5" BackgroundColor="LightGray" CornerRadius="20" WidthRequest="40" HeightRequest="40"/>
+                <Entry x:Name="lbltime" FontSize="35" Text="00:00" HorizontalOptions="CenterAndExpand" Scale="2" Keyboard="Numeric">
+                    <Entry.Behaviors>
+                        <behavior:MaskedBehavior Mask="XX:XX"/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Button x:Name="btnPlusFive" Text="+5" VerticalOptions="CenterAndExpand" BackgroundColor="LightGray" CornerRadius="20" WidthRequest="40" HeightRequest="40"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="100">
+                <Button x:Name="btnReset" Text="Reset" BackgroundColor="LightGray" Margin="5,0,5,0" CornerRadius="40" BorderWidth="2" WidthRequest="80" HeightRequest="80" BorderColor="Gray"/>
+                <Button x:Name="btnStart" Text="Start" BackgroundColor="LightGreen" TextColor="DarkGreen" Margin="5,0,5,0" CornerRadius="40" BorderWidth="2" WidthRequest="80" HeightRequest="80" BorderColor="DarkGreen"/>
+            </StackLayout>
+
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button x:Name="btn20" Text="20" WidthRequest="120" HeightRequest="60" BackgroundColor="LightGray"/>
+                    <Button x:Name="btn30" Text="30" WidthRequest="120" HeightRequest="60" BackgroundColor="LightGray"/>
+                    <Button x:Name="btn45" Text="45" WidthRequest="120" HeightRequest="60" BackgroundColor="LightGray"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button x:Name="btn60" Text="60" WidthRequest="120" HeightRequest="60" BackgroundColor="LightGray"/>
+                    <Button x:Name="btn90" Text="90" WidthRequest="120" HeightRequest="60" BackgroundColor="LightGray"/>
+                    <Button x:Name="btn120" Text="120" WidthRequest="120" HeightRequest="60" BackgroundColor="LightGray"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

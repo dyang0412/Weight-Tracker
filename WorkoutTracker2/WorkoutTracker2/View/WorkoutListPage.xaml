@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WorkoutTracker2.View.WorkoutListPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" Clicked="OnWorkoutAdded" />
+        <ToolbarItem Text="Edit"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <ListView x:Name="listView" RowHeight="60" SeparatorVisibility="Default" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                        <!--<TextCell Text="{Binding Name}" Detail="{Binding Description}"/>-->
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding Name}" Margin="15,0,0,0" FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="16"/>
+                                <Label Text="{Binding Description}" Margin="15,0,0,0" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" FontSize="13"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

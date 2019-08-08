@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WorkoutTracker2.View.NewWorkoutPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="OnSaveClicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="10,20,10,10">
+            <Entry HorizontalTextAlignment="Start" Placeholder="Workout Name" Text="{Binding Name}" HorizontalOptions="Start"/>
+            <Entry HorizontalTextAlignment="Start" Placeholder="Description" Text="{Binding Description}" HorizontalOptions="Start" />
+            <Button Text="Delete" Clicked="OnDeleteClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WorkoutTracker2.View.WorkoutDetailPage"
+             Title="{Binding Name}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <StackLayout Margin="15">
+
+            <ListView x:Name="listView" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="50">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.75*"/>
+                                    <ColumnDefinition Width="0.25*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}" Margin="15,0,0,0" VerticalOptions="Center" FontSize="18"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid ColumnSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Add Exercise" Grid.Column="0" Clicked="OnExerciseAdded" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+                <Button Text="Delete" Grid.Column="1" Clicked="OnDeleteClicked" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Grid>
+        </StackLayout>
+        
+        
+        <!--
+        <StackLayout>
+            <ListView x:Name="listView" RowHeight="60" SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5">
+                                <Label Text="Name:"/>
+                                <Label Text="{Binding Name}" FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="16"/>
+                                <Label Text="Sets:"/>
+                                <Label Text="{Binding Sets}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" FontSize="13"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid ColumnSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Add Exercise" Grid.Column="0" Clicked="OnExerciseAdded" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+                <Button Text="Delete" Grid.Column="1" Clicked="OnDeleteClicked" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"/>
+
+            </Grid>
+
+        </StackLayout>
+        -->
+    </ContentPage.Content>
+
+</ContentPage>

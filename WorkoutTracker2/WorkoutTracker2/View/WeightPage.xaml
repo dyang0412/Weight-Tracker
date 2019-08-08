@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:WorkoutTracker2"
+             mc:Ignorable="d"
+             x:Class="WorkoutTracker2.View.WeightPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"  Clicked="OnWeightAdded"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:StringToColorConverter x:Key="StringToColorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listView" 
+                      Margin="0" 
+                      SeparatorVisibility="Default" 
+                      SeparatorColor="Gray"
+                      ItemSelected="OnItemSelected"
+                      IsGroupingEnabled="True"
+                      HasUnevenRows="True"
+                      CachingStrategy="RecycleElement">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="30">
+                            <Grid BackgroundColor="LightGray">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                    <ColumnDefinition Width="0.3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Heading}" Margin="15,0,0,0" FontAttributes="Bold" VerticalOptions="Center" FontSize="16"/>
+                                <Label Grid.Column="2" Text="{Binding NetWeightChange}" TextColor="{Binding TextColor, Converter={StaticResource StringToColorConverter}}"  Margin="0,0,15,0" VerticalOptions="Center" HorizontalTextAlignment="End" FontSize="16"/>
+                            </Grid>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="50">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                    <ColumnDefinition Width="0.3*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Date, StringFormat='{0:MM/dd} ({0:ddd})'}" Margin="15,0,0,0" VerticalOptions="Center" FontSize="18"/>
+                                <Label Grid.Column="1" Text="{Binding WeightChange}" TextColor="{Binding TextColor, Converter={StaticResource StringToColorConverter}}" VerticalOptions="Center" FontSize="16"/>
+                                <Label Grid.Column="2" Text="{Binding Weight, StringFormat='{0:N} lbs'}" Margin="0,0,15,0" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="End" FontSize="18"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

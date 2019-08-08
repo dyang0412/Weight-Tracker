@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WorkoutTracker2.View.WeightEditPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="OnSaveClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <StackLayout VerticalOptions="StartAndExpand">
+                <Label Text="Date:"/>
+                <DatePicker x:Name="DatePicker"
+                        Format="D"
+                        Margin="30,0,0,0"
+                        Date="{Binding Date}"/>
+                <Label Text="Weight(lbs):"/>
+                <Entry x:Name="weightEntry" Text="{Binding Weight}" Margin="30,0,0,0" Keyboard="Numeric"/>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Delete" BackgroundColor="LightGray" Clicked="OnDeleteClicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

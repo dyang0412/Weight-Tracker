@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WorkoutTracker2.View.NewExercisePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="OnSaveClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Label Text="Exercise Name"/>
+            <Entry Text="{Binding Name}" Margin="30,0,0,0"/>
+            <!--
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".2*"/>
+                    <ColumnDefinition Width=".25*"/>
+                    <ColumnDefinition Width=".25*"/>
+                    <ColumnDefinition Width=".3*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Set" VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center" FontSize="Large"/>
+                <Label Text="lbs" Grid.Column="1" VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center" FontSize="Large"/>
+                <Label Text="Reps" Grid.Column="2" VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center" FontSize="Large"/>
+                <Label Text="1" Grid.Row="1" VerticalOptions="CenterAndExpand" FontSize="Large" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="Set1Weight" Placeholder="0" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                <Entry x:Name="Set1Reps" Placeholder="0" Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+            </Grid>
+            -->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
